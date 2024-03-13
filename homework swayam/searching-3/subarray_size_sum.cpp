@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// 1: using brute force
 int getmaximumsize(vector<int>& a, int s) {
     int n = a.size();
     int ans = 0;
@@ -28,3 +28,32 @@ int main() {
     cout << ans << endl;
     return 0;
 }
+
+
+//using sliding window
+int getmaximumsize(vector<int>& nums,int target) {
+        //initialize ans as maximum
+        int ans=INT_MAX;
+        //take variable for currsum
+        int curr=0;
+        //assign two pointers start and end
+        int start=0,end=0;
+        int n=nums.size();
+        while(end<n){
+            // keep adding elements from starting till it gets greater than target
+            curr=curr+nums[end];
+            while(curr>=target){
+                //if curr summ is greater than the target than update ans
+                //update ans as minimum of ans , curr subarray length(end-start+1)
+                ans=min(ans,end-start+1);
+                //shrink window remove elements from front of the window
+                curr=curr-nums[start++];
+            }
+            //update end
+            end++;
+        }
+        if(ans==INT_MAX){
+            return 0;
+        }
+        return ans;
+    }
