@@ -18,6 +18,7 @@ class Solution {
             int left1 = INT_MIN, left2 = INT_MIN;
             int right1 = INT_MAX, right2 = INT_MAX;
 
+            //right1,right2,left1,left2 ki value pta krege
             if (mid1<n1)
                 right1=a[mid1];
             if (mid2<n2)
