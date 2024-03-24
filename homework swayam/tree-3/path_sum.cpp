@@ -19,7 +19,7 @@ public:
         if (!root->left && !root->right) {
             return targetSum == root->val;
         }
-        //(postorder approach)
+        //(preorder approach)
         
         //left subtree ka sum calculate krlo
         //right subtree ka sum calculate krlo
