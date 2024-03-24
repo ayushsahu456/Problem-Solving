@@ -31,7 +31,6 @@ void solve(TreeNode* root,vector<string> &ans,string s)
 vector<string> binaryTreePaths(TreeNode* root) {
         vector<string> ans;
         string s="";
-        // getpath(ans,root,s);
         solve(root,ans,s);
         return ans;    
 }
